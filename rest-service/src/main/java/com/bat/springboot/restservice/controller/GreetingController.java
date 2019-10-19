@@ -20,6 +20,13 @@ public class GreetingController {
     private final AtomicLong counter = new AtomicLong();    //原子变量
 
     @RequestMapping("/greeting")
+    /**
+     * @Description TODO
+     * @param String name
+     * @return com.bat.springboot.restservice.entity.Greeting
+     * @date 2019/10/19 1:29 下午
+     * @author dragonbaby308
+     */
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name){
         return new Greeting(counter.incrementAndGet(), String.format(TEMPLATE, name));
     }
